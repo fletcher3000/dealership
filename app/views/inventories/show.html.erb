@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Make:</strong>
+  <%= @inventory.make %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @inventory.year %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @inventory.price %>
+</p>
+
+<p>
+  <strong>Mileage:</strong>
+  <%= @inventory.mileage %>
+</p>
+
+<%= image_tag @inventories.avatar.url(:medium) %>
+
+<%= link_to 'Edit', edit_inventory_path(@inventory) %> |
+<%= link_to 'Back', inventories_path %>

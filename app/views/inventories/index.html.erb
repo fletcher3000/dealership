@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Inventory</h1>
+
+  <div class="row">
+    <% @inventories.each do |inventory| %>
+    <div class="col-md-4">
+     <div class="panel panel-default">
+      <div class="panel-body">
+        <h2><%= inventory.make %></h2>
+        <h2><%= inventory.year %></h2>
+        <h2><%= inventory.price %></h2>
+        <h3><%= inventory.mileage %></h3>
+
+        <% if vehicle.avatar_file_name != nil %>
+        <%= image_tag inventory.avatar.url(:medium), class: "img-responsive" %>
+         <% end %>
+        <div class="btn-group">
+          <%= link_to 'Show', inventory, class: "btn btn-primary" %>
+          <%= link_to 'Edit', edit_inventory_path(inventory), class: "btn btn-warning" %>
+          <%= link_to 'Destroy', inventory, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+         </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+<%= link_to 'New Inventory', new_inventory_path, class: "btn btn-primary" %>
